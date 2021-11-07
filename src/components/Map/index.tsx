@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import { FC, memo, useCallback, useRef, useState } from 'react'
+import { FC, memo, useCallback, useEffect, useRef, useState } from 'react'
 import { IGoogleMap, IGoogleLatLng } from '../../types'
+import { MapContainer } from './index.styled'
 
 export interface IMapProps {
   mapType?: google.maps.MapTypeId
@@ -32,12 +33,16 @@ const Map: FC<IMapProps> = memo(({ mapType, mapTypeControl = false }) => {
     initMap(5, defaultAddress)
   }, [map])
 
-  console.log(defaultMapStart)
+  useEffect(() => {
+    !map && defaultMapStart()
+  }, [])
 
   return (
-    <div>
-      <div ref={mapRef}>h1</div>
-    </div>
+    <MapContainer>
+      <MapContainer styleMap ref={mapRef}>
+        h1
+      </MapContainer>
+    </MapContainer>
   )
 })
 

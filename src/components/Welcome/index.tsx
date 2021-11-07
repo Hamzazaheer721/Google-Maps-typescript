@@ -2,7 +2,7 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Map from '../Map'
 import { loadMapApi } from '../../utils'
-import { Container, WelcomeText } from './index.styled'
+import { Container } from './index.styled'
 
 const WelcomeComponent: FC<{}> = () => {
   const [scriptloaded, setScriptLoaded] = useState<boolean>(false)
@@ -23,7 +23,6 @@ const WelcomeComponent: FC<{}> = () => {
 
   return (
     <Container>
-      <WelcomeText>Whatspays</WelcomeText>
       {scriptloaded && (
         <Map
           mapType={googleRef.current?.maps.MapTypeId.ROADMAP}

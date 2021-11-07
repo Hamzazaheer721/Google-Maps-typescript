@@ -7,6 +7,7 @@ import { Container, WelcomeText } from './index.styled'
 const WelcomeComponent: FC<{}> = () => {
   const [scriptloaded, setScriptLoaded] = useState<boolean>(false)
   const googleRef = useRef<typeof google>()
+
   useEffect(() => {
     const googleMapScript = loadMapApi()
     googleMapScript.addEventListener('load', () => {

@@ -13,20 +13,23 @@ const Map: FC<IMapProps> = memo(({ mapType, mapTypeControl = false }) => {
   const mapRef = useRef<HTMLDivElement>(null)
   const [map, setMap] = useState<IGoogleMap>()
 
-  const initMap = useCallback((zoomLevel: number, address: IGoogleLatLng) => {
-    if (mapRef.current) {
-      setMap(
-        new google.maps.Map(mapRef.current, {
-          zoom: zoomLevel,
-          center: address,
-          mapTypeControl,
-          streetViewControl: true,
-          zoomControl: true,
-          mapTypeId: mapType
-        })
-      )
-    }
-  }, [])
+  const initMap = useCallback(
+    (zoomLevel: number, address: IGoogleLatLng) => {
+      if (mapRef.current) {
+        setMap(
+          new google.maps.Map(mapRef.current, {
+            zoom: zoomLevel,
+            center: address,
+            mapTypeControl,
+            streetViewControl: true,
+            zoomControl: true,
+            mapTypeId: mapType
+          })
+        )
+      }
+    },
+    [map]
+  )
 
   const defaultMapStart = useCallback(() => {
     const defaultAddress = new google.maps.LatLng(65.156, 13.369)

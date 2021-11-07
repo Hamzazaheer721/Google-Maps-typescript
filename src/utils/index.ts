@@ -1,7 +1,7 @@
-import { GOOGLE_API_KEY } from '../config/constants';
+import { GOOGLE_API_KEY_SECONDARY } from '../config/constants';
 
 export const loadMapApi = () => {
-  const mapsURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}`
+  const mapsURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY_SECONDARY}&libraries=places`
   const scripts = document.getElementsByTagName('script');
 
   // eslint-disable-next-line no-plusplus

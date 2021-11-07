@@ -4,7 +4,7 @@ export const MapContainer = styled.div<{styleMap?: boolean}>`
   display: flex;
   justify-content: center;
   ${({styleMap}) => styleMap && `
-    height: 60vh;
-    width: 80%;
+    height: 100vh;
+    width: 100%;
   `}
 `;

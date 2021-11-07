@@ -42,9 +42,7 @@ const Map: FC<IMapProps> = memo(({ mapType, mapTypeControl = false }) => {
 
   return (
     <MapContainer>
-      <MapContainer styleMap ref={mapRef}>
-        h1
-      </MapContainer>
+      <MapContainer styleMap ref={mapRef} />
     </MapContainer>
   )
 })
